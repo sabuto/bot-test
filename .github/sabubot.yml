@@ -2,3 +2,6 @@ settings:
   add-owner-assignee: true
   process-closed-issues: true
   remove-labels: true
+
+title-keyword-labels:
+  in-progress: ["WiP"]
