@@ -3,6 +3,7 @@ settings:
   process-closed-issues: true
   remove-labels: true
   remove-keyword-labels: true
+  close-issues: true
 
 title-keyword-labels:
   in-progress: ["WiP"]
