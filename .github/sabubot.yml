@@ -1,4 +1,4 @@
 settings:
   add-owner-assignee: true
-  process-merged-prs: false
+  process-closed-issues: true
   remove-labels: true
