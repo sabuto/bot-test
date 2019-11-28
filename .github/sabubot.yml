@@ -1,4 +1,4 @@
 settings:
-  add-owner-assignee: true
+  add-owner-assignee: false
   process-merged-prs: false
   remove-labels: true
