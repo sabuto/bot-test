@@ -5,3 +5,7 @@ settings:
 
 title-keyword-labels:
   in-progress: ["WiP"]
+  chore: ["chore"]
+  bugfix: ["bug","bugfix","fix"]
+  feature: ["feature"]
+  enhancement: ["enhancement"]
