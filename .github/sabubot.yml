@@ -4,6 +4,8 @@ settings:
   remove-labels: true
   remove-keyword-labels: true
   close-issues: true
+  move-issues: false
+  move-prs: false
 
 title-keyword-labels:
   in-progress: ["WiP"]
@@ -11,3 +13,5 @@ title-keyword-labels:
   bugfix: ["bug","bugfix","fix"]
   feature: ["feature"]
   enhancement: ["enhancement"]
+
+move-issues-to: bot-test2
