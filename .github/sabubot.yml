@@ -4,7 +4,7 @@ settings:
   remove-labels: true
   remove-keyword-labels: true
   close-issues: true
-  move-issues: false
+  move-issues: true
   move-prs: false
 
 title-keyword-labels:
