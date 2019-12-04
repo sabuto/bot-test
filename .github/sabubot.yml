@@ -6,6 +6,7 @@ settings:
   close-issues: true
   move-issues: true
   move-prs: false
+  move-labels: true
 
 title-keyword-labels:
   in-progress: ["WiP"]
