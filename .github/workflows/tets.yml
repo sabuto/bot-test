@@ -27,4 +27,8 @@ jobs:
         git config --local user.name "sabuto"
         git add .
         git commit -m "Add changes"
-        git push https://sabuto:${{ secrets.GITHUB_PSA }}@github.com/sabuto/bot-test2.git
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
