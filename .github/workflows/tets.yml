@@ -15,7 +15,7 @@ jobs:
       name: Secondary Checkout
       with:
         repository: sabuto/bot-test2
-        path: bot-test2
+        path: ../bot-test2
 
     - name: get dirs
       run: |
