@@ -11,11 +11,11 @@ jobs:
     - uses: actions/checkout@v2
       name: Main Checkout
 
-    # - uses: actions/checkout@v2
-    #   name: Secondary Checkout
-    #   with:
-    #     repository: sabuto/bot-test2
-    #     path: bot-test2
+    - name: Secondary Checkout
+      run: |
+      cd ../
+      git clone git@github.com/sabuto/bot-test2
+      
     - name: do ls etc
       run: |
         pwd
