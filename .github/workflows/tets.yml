@@ -22,5 +22,6 @@ jobs:
 
     - name: get status
       run: |
+        git status
         cd bot-test2
         git status
