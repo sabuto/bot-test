@@ -20,9 +20,14 @@ jobs:
     - name: move file to other repo
       run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
 
-    - name: push new change to other repo
+    - name: commit to local
       run: |
         cd bot-test2
-        git add .
-        git commit -m "update"
-        git push
+        git config --local user.email "robe_dunne@hotmail.com"
+        git config --local user.name "sabuto"
+        git commit -m "Add changes" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
