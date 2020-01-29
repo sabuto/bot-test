@@ -13,9 +13,9 @@ jobs:
 
     - name: Secondary Checkout
       run: |
-      cd ../
-      git clone git@github.com/sabuto/bot-test2
-      
+        cd ../
+        git clone git@github.com/sabuto/bot-test2
+
     - name: do ls etc
       run: |
         pwd
