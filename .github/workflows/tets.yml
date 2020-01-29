@@ -17,16 +17,10 @@ jobs:
         repository: sabuto/bot-test2
         path: ../bot-test2
 
-    - name: get dirs
-      run: |
-        ls -la
-        cd ../
-        ls -la
-        cd bot-test2
-        ls -la
     - name: move file to other repo
-      run: \cp -Rv .github/sabubot.yml ../bot-test2/.github/sabubot.yml
+      run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
+
     - name: get status
       run: |
-        cd ../bot-test2
+        cd bot-test2
         git status
