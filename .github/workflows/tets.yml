@@ -20,8 +20,9 @@ jobs:
     - name: move file to other repo
       run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
 
-    - name: get status
+    - name: push new change to other repo
       run: |
-        git status
         cd bot-test2
-        git status
+        git add .
+        git commit -m "update"
+        git push
