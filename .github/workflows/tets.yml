@@ -15,7 +15,7 @@ jobs:
       name: Secondary Checkout
       with:
         repository: sabuto/bot-test2
-        path: ../bot-test2
+        path: bot-test2
 
     - name: move file to other repo
       run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
