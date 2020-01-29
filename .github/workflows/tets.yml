@@ -16,9 +16,9 @@ jobs:
       with:
         repository: sabuto/bot-test2
         path: bot-test2
-    - name: do ls etc
+    - name: move file to other repo
+      run: \cp .github/sabubot.yml ../bot-test2/.github/sabubot.yml
+    - name: get status
       run: |
-        pwd
-        ls
-        cd ../
-        ls
+        cd ../bot-test2
+        git status
