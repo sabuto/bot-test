@@ -23,29 +23,20 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
-    - name: get dir's
-      run: | 
-        ls -la
-        cd main
-        ls -la
-        cd ../secondary
-        ls -la
+    - name: move file to other repo
+      run: \cp -Rv main/.github/sabubot.yml secondary/.github/sabubot.yml
 
+    - name: commit to local
+      run: |
+        cd secondary
+        git config --local user.email "robe_dunne@hotmail.com"
+        git config --local user.name "sabuto"
+        git add .
+        git commit -m "Add changes"
 
-    # - name: move file to other repo
-    #   run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
-
-    # - name: commit to local
-    #   run: |
-    #     cd bot-test2
-    #     git config --local user.email "robe_dunne@hotmail.com"
-    #     git config --local user.name "sabuto"
-    #     git add .
-    #     git commit -m "Add changes"
-
-    # - name: Push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_PSA }}
-    #     repository: sabuto/bot-test2
-    #     force: true
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_PSA }}
+        repository: sabuto/bot-test2
+        # force: true
