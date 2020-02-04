@@ -13,29 +13,34 @@ jobs:
       with:
         persist-credentials: false
         fetch-depth: 0
+        path: main
 
     - uses: actions/checkout@v2
       name: Secondary Checkout
       with:
         repository: sabuto/bot-test2
-        path: bot-test2
+        path: secondary
         persist-credentials: false
-        # fetch-depth: 0
+        fetch-depth: 0
 
-    - name: move file to other repo
-      run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
+    - name: get dir's
+      run: ls -la
 
-    - name: commit to local
-      run: |
-        cd bot-test2
-        git config --local user.email "robe_dunne@hotmail.com"
-        git config --local user.name "sabuto"
-        git add .
-        git commit -m "Add changes"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_PSA }}
-        repository: sabuto/bot-test2
-        force: true
+    # - name: move file to other repo
+    #   run: \cp -Rv .github/sabubot.yml bot-test2/.github/sabubot.yml
+
+    # - name: commit to local
+    #   run: |
+    #     cd bot-test2
+    #     git config --local user.email "robe_dunne@hotmail.com"
+    #     git config --local user.name "sabuto"
+    #     git add .
+    #     git commit -m "Add changes"
+
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_PSA }}
+    #     repository: sabuto/bot-test2
+    #     force: true
