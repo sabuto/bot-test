@@ -24,7 +24,12 @@ jobs:
         fetch-depth: 0
 
     - name: get dir's
-      run: ls -la
+      run: | 
+        ls -la
+        cd main
+        ls -la
+        cd ../secondary
+        ls -la
 
 
     # - name: move file to other repo
