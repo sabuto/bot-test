@@ -1,5 +1,6 @@
 settings:
   add-owner-assignee: true
+  add-owner-reviewer: true
   process-closed-issues: true
   remove-labels: true
   remove-keyword-labels: true
