@@ -34,7 +34,7 @@ jobs:
         GREETINGS: 'Hello, .NET developers!' # ${{ secrets.GITHUB_TOKEN }}
       with:
         apikey: ${{ secrets.TRELLO_APIKEY }}
-        apitoken: ${{ github.repository }}
+        apitoken: ${{ secrets.TRELLO_APITOKEN }}
         inputlist: '62012e540ed42089af166829'
         outputlist: '6213b68d5a9f083217469d97'
       
