@@ -1,0 +1,46 @@
+# The name of the work flow. Badges will use this name
+name: 'trellog testing'
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'The reason for running the workflow'
+        required: true
+        default: 'Manual run'
+
+jobs:
+  trello:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: 'Print manual run reason'
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        echo 'Reason: ${{ github.event.inputs.reason }}'
+
+    - name: trellog
+      id: trellog
+      uses: sabuto/trellog-action@main
+      env:
+        GREETINGS: 'Hello, .NET developers!' # ${{ secrets.GITHUB_TOKEN }}
+      with:
+        apikey: ${{ secrets.TRELLO_APIKEY }}
+        apitoken: ${{ github.repository }}
+        inputlist: '62012e540ed42089af166829'
+        outputlist: '6213b68d5a9f083217469d97'
+      
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v3.4.1
+      with:
+        title: '${{ steps.trellog.outputs.version }}'
+        body: '${{ steps.trellog.outputs.changelog }}'
+        commit-message: '.NET code metrics, automated pull request.'
