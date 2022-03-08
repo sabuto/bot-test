@@ -33,10 +33,10 @@ jobs:
       env:
         GREETINGS: 'Hello, .NET developers!' # ${{ secrets.GITHUB_TOKEN }}
       with:
-        apikey: ${{ secrets.TRELLO_APIKEY }}
-        apitoken: ${{ secrets.TRELLO_APITOKEN }}
-        inputlist: '62012e540ed42089af166829'
-        outputlist: '6213b68d5a9f083217469d97'
+        apiKey: ${{ secrets.TRELLO_APIKEY }}
+        apiToken: ${{ secrets.TRELLO_APITOKEN }}
+        inputList: '62012e540ed42089af166829'
+        outputList: '6213b68d5a9f083217469d97'
       
     - name: Create pull request
       uses: peter-evans/create-pull-request@v3.4.1
